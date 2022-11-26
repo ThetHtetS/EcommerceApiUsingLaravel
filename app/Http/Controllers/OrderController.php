@@ -38,12 +38,9 @@ class OrderController extends Controller
    function history($date){
     
     $orders = Order::where('created_at', 'like' ,  '%'. $date. '%')->get();
-  
     return response()-> json([
         'status' => 200,
         'data' => $orders,
-        'date'=> $date,
-        
     ]);
    }
 }

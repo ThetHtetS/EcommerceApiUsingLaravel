@@ -40,7 +40,7 @@ class ProductController extends Controller
       $validator = validator($request->all(), [   
             'name' => 'required',
             'slug' => 'required',
-            'image'=> 'required',
+            //'image'=> 'required',
             'seeling_price'=>'required',
             'original_price' => 'required',
             'brand'=> 'required',
@@ -75,7 +75,7 @@ class ProductController extends Controller
                                 $product->image = 'uploads/product/'.$filename;
                                 }
                                 */
-                                $file = $request->image;
+                             $file = $request->image;
                                 $name = time().'.' . explode('/', explode(':', substr($file, 0, strpos($file, ';')))[1])[1];
                                 $location = public_path('uploads/product/'.$name);
                                 Image::make($file)->save($location);

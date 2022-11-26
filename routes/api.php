@@ -3,13 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
-use\App\Http\Controllers\CategoryController;
-use\App\Http\Controllers\ProductController;
-use\App\Http\Controllers\CourseController;
-use\App\Http\Controllers\CartController;
-use\App\Http\Controllers\CheckoutController;
-use\App\Http\Controllers\OrderController;
-use\App\Http\Controllers\SearchController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes

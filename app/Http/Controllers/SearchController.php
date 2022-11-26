@@ -21,7 +21,9 @@ class SearchController extends Controller
         return response()-> json([
             'status' => 200,
             'result'=> $result,
+            "s"=> $search,
        
         ]);
     }
+    
 }
