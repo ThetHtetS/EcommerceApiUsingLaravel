@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     function register(Request $request){
-     /*   $validator = $request->validate([
+       $validator = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|unique:users',
             'password' =>'required'
         ]);
-*/
+
 $validator = validator(request()->all(), [   
     'name' => 'required|max:255',
     'email' => 'required|unique:users',

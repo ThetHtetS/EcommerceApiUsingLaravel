@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orderitems;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Cart;
+
 class CheckoutController extends Controller
 {
     function placeorder(Request $request)
@@ -38,9 +40,9 @@ class CheckoutController extends Controller
     ]);
     
     $cart = Cart::where('user_id', $user_id)->get();
-     $orderitem=[];
+     $Orderitem=[];
     foreach($cart as $item){
-        $orderitem[]= [
+        $Orderitem[]= [
             
             'product_id'=>$item->product_id,
             'qty'=> $item->product_qty,
@@ -51,7 +53,9 @@ class CheckoutController extends Controller
        ]);
 
     }
-   $order->orderitems()->createMany($orderitem);
+   $orde = new Orderitems;
+   
+   $order->Orderitems()->createMany($Orderitem);
 Cart::destroy($cart);
     return response()-> json([
         'status' => 200,
